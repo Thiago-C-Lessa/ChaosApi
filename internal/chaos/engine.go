@@ -17,7 +17,8 @@ type Engine struct {
 func NewEngine(store Store) *Engine {
 	return &Engine{
 		store: store,
-		rand:  rand.New(rand.NewSource(time.Now().UnixNano())),
+		//rand:  rand.New(rand.NewPCG(rand.Uint64(),rand.Uint64())),
+		rand: rand.New(rand.NewSource(time.Now().UnixNano())),
 	}
 }
 
